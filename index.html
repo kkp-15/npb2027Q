@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="プロ野球12球団の背番号クイズ2027年版（準備中）。10月28日時点の暫定名簿で、球団を選んで選手と背番号を当てる4択クイズ。12球団の退団・引退の動きもまとめています。">
+<meta name="theme-color" content="#ff8a3d">
+<link rel="canonical" href="https://npb2027q.kkpwebninja.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="12球団 背番号クイズ2027（準備中）">
+<meta property="og:description" content="プロ野球12球団の背番号クイズ2027年版（準備中）。10月28日時点の暫定名簿で、球団を選んで選手と背番号を当てる4択クイズ。12球団の退団・引退の動きもまとめています。">
+<meta property="og:url" content="https://npb2027q.kkpwebninja.com/">
+<meta property="og:image" content="https://npb2027q.kkpwebninja.com/ogp.png?d=20261029">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="web忍者の砦">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="12球団 背番号クイズ2027（準備中）">
+<meta name="twitter:description" content="プロ野球12球団の背番号クイズ2027年版（準備中）。10月28日時点の暫定名簿で、球団を選んで選手と背番号を当てる4択クイズ。12球団の退団・引退の動きもまとめています。">
+<meta name="twitter:image" content="https://npb2027q.kkpwebninja.com/ogp.png?d=20261029">
+
+<title>プロ野球12球団 背番号クイズ2027｜2027年版（準備中）・選手と背番号を当てる｜無料</title>
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2LM85GJN0L"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-2LM85GJN0L');
+</script>
+<!-- 12球団 背番号クイズ 2027年版（準備中）の入口。~/test/_quiz2027_src の template/hub.html から build.py で書き出したもの。直接直さない。
+     準備中の間は広告（AdSense）を入れない。球団ロゴ・ユニフォーム柄・選手写真は使わない（球団色だけ）。 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sumi:#1f1a17; --kinari:#fbf3e4; --surface:#fffdf8; --orange:#ff8a3d; --shu:#c93b23; --kin:#c9a13b;
+  --text2:#4a3f37; --line:rgba(31,26,23,.15); --navy:#1B2C5C;
+  --sh:3px 3px 0 var(--sumi); --r:6px;
+  --body:"M PLUS Rounded 1c","Hiragino Maru Gothic ProN","BIZ UDPGothic","Noto Sans JP",system-ui,sans-serif;
+  --num:"Oswald","Arial Narrow","Helvetica Neue",Impact,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--surface);color:var(--sumi);font-family:var(--body);font-size:16px;line-height:1.6;overflow-x:hidden}
+a{color:#1a6fc4}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+.num{font-family:var(--num);font-variant-numeric:tabular-nums}
+.top{background:var(--kinari);border-bottom:3px solid var(--sumi);position:relative}
+.top::after{content:"";position:absolute;left:0;right:0;bottom:-9px;height:6px;background:var(--orange)}
+.top .wrap{min-height:56px;padding-top:8px;padding-bottom:8px}
+.top .tag{font-family:var(--num);font-size:14px;font-weight:600;letter-spacing:.12em;color:var(--navy);line-height:1.2;text-transform:uppercase}
+.top h1{font-size:20px;font-weight:800;line-height:1.3}
+@media (max-width:400px){.top .tag{font-size:12px;letter-spacing:.04em}.top h1{font-size:17px}}
+.prep{margin:20px 0 0;padding:6px 10px;border:2px solid var(--sumi);border-radius:var(--r);background:#fff4d6;font-size:14px;line-height:1.5}
+.prep b{color:var(--shu)}
+.lead{margin:12px 0 0;font-size:15px}
+h2.h2{margin:26px 0 10px;padding-bottom:4px;border-bottom:2px solid var(--sumi);font-size:18px;font-weight:800}
+.lg{margin:14px 0 6px;font-size:14px;font-weight:800;color:var(--text2)}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (min-width:640px){.cards{grid-template-columns:repeat(3,1fr)}}
+.tcard{position:relative;display:block;min-height:76px;padding:8px 10px 8px 18px;border:2px solid var(--sumi);border-radius:var(--r);background:var(--surface);box-shadow:var(--sh);color:var(--sumi);text-decoration:none;overflow:hidden}
+.tcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:9px;background:linear-gradient(var(--tc) 0 70%,var(--tc2) 70% 100%);border-right:2px solid var(--sumi)}
+.tcard:active{transform:translate(3px,3px);box-shadow:none}
+.tcard b{display:block;font-size:17px;line-height:1.3}
+.tcard>span{display:block;font-size:12px;color:var(--text2);line-height:1.35}
+.tcard .cnt{display:block;margin-top:2px;font-style:normal;font-size:13px;color:var(--text2)}
+.tcard .cnt .num{font-size:18px;color:var(--sumi);margin-right:1px}
+.chg h3{margin:20px 0 4px;padding:4px 10px;border-left:8px solid var(--tc);font-size:16px;font-weight:800;display:flex;align-items:baseline;gap:8px;background:var(--kinari)}
+.chg h3 small{margin-left:auto;font-size:13px;color:var(--text2)}
+.chg h4{margin:8px 0 4px;font-size:15px}
+.chg p{margin:6px 0;font-size:15px;line-height:1.7}
+.chg table{width:100%;border-collapse:collapse;font-size:14px}
+.chg th{background:var(--kinari);border-bottom:2px solid var(--sumi);padding:4px 6px;text-align:left;white-space:nowrap}
+.chg td{padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top}
+.chg td.n{font-family:var(--num);font-size:17px;width:44px}
+.chg a{display:inline-block;min-height:44px;line-height:44px}
+.wait{padding:8px 12px;border-left:4px solid var(--kin);background:#fff8ee;font-size:15px}
+.faq-section{margin-top:26px}
+.faq-section>h2{padding-bottom:4px;border-bottom:2px solid var(--sumi);font-size:18px;font-weight:800}
+.faq-intro{margin:8px 0 4px;font-size:14px;color:var(--text2)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item summary{min-height:48px;display:flex;align-items:center;padding:6px 28px 6px 0;position:relative;font-size:15px;font-weight:800;cursor:pointer;list-style:none}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"＋";position:absolute;right:4px}
+.faq-item[open] summary::after{content:"－"}
+.faq-item p{padding:0 0 12px;font-size:15px;line-height:1.7;color:var(--text2)}
+.links{margin:6px 0 0;padding:0;list-style:none}
+.links li{border-bottom:1px solid #ddd}
+.links a{display:flex;align-items:center;min-height:48px;font-weight:800;text-decoration:none;color:var(--sumi)}
+.links a::after{content:"→";margin-left:auto;padding-left:8px;color:var(--orange)}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebApplication",
+ "name": "12球団 背番号クイズ2027",
+ "url": "https://npb2027q.kkpwebninja.com/",
+ "description": "プロ野球12球団の背番号クイズ2027年版（準備中）。10月28日時点の暫定名簿で、球団を選んで選手と背番号を当てる4択クイズ。12球団の退団・引退の動きもまとめています。",
+ "applicationCategory": "GameApplication",
+ "operatingSystem": "All",
+ "inLanguage": "ja",
+ "offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "JPY"
+ },
+ "author": {
+  "@type": "Organization",
+  "name": "web忍者の砦",
+  "url": "https://kkpwebninja.com"
+ },
+ "isPartOf": {
+  "@type": "WebSite",
+  "name": "web忍者の砦",
+  "url": "https://kkpwebninja.com"
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "12球団 背番号クイズ2027はいつ確定版になりますか？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "今は準備中で、10月28日時点の暫定名簿（12球団 計687名）で遊べます。新入団選手の背番号や背番号の変更がそろう2027年3月中旬（開幕の前）に確定版にする予定です。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "どの球団の背番号クイズがありますか？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "セ・リーグ6球団とパ・リーグ6球団の12球団です。このページで球団を選ぶと、その球団の背番号クイズ2027が開きます。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "2026年版とどこが違いますか？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "2026年のシーズン途中に退団・移籍した選手と、各球団が2027年に向けて発表した退団・引退・戦力外の選手を、出典を確かめて外しました（12球団で計95名）。新入団・背番号の変更は発表を確かめてから足します。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "全球団をまぜて出題するモードはありますか？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "準備中の間はありません。今は球団ごとに遊べます。全球団をまぜた出題は、あとで足す予定です。"
+   }
+  }
+ ]
+}
+</script>
+<!-- WEBNINJA_UNIFIED_FAVICON -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=2">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png?v=2">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
+<link rel="manifest" href="/manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="12球団背番号2027">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="tag">NPB 12 Teams 2027</div>
+    <h1>12球団 背番号クイズ2027</h1>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="prep"><b>2027年版 準備中</b>：10月28日時点の暫定名簿で遊べます。新入団選手は背番号の発表後に追加します</p>
+  <p class="lead">球団を選ぶと、その球団の背番号クイズ2027が開きます。暫定名簿は12球団で計<span class="num" id="hubTotal">687</span>名です。</p>
+
+  <h2 class="h2">12球団を選ぶ</h2>
+  <div class="cards" id="cards">
+      <a class="tcard" style="--tc:#C8102E;--tc2:#C8102E" data-team="広島" href="https://carp2027q.kkpwebninja.com/" onclick="if(typeof gtag==='function')gtag('event','xlink_quiz_carp')"><b>カープ</b><span>広島東洋カープ</span><em class="cnt"><span class="num" data-slug="carp">56</span>名</em></a>
+      <a class="tcard" style="--tc:#F97709;--tc2:#F97709" data-team="巨人" href="https://giants2027q.kkpwebninja.com/" onclick="if(typeof gtag==='function')gtag('event','xlink_quiz_giants')"><b>ジャイアンツ</b><span>読売ジャイアンツ</span><em class="cnt"><span class="num" data-slug="giants">64</span>名</em></a>
+      <a class="tcard" style="--tc:#1A1A1A;--tc2:#FFD700" data-team="阪神" href="https://tigers2027q.kkpwebninja.com/" onclick="if(typeof gtag==='function')gtag('event','xlink_quiz_tigers')"><b>タイガース</b><span>阪神タイガース</span><em class="cnt"><span class="num" data-slug="tigers">62</span>名</em></a>
+      <a class="tcard" style="--tc:#1B2F56;--tc2:#1B2F56" data-team="ヤクルト" href="https://swallows2027q.kkpwebninja.com/" onclick="if(typeof gtag==='function')gtag('event','xlink_quiz_swallows')"><b>スワローズ</b><span>東京ヤクルトスワローズ</span><em class="cnt"><span class="num" data-slug="swallows">50</span>名</em></a>
+      <a class="tcard" style="--tc:#00489C;--tc2:#00489C" data-team="DeNA" href="https://baystars2027q.kkpwebninja.com/" onclick="if(typeof gtag==='function')gtag('event','xlink_quiz_baystars')"><b>ベイスターズ</b><span>横浜DeNAベイスターズ</span><em class="cnt"><span class="num" data-slug="baystars">51</span>名</em></a>
+      <a class="tcard" style="--tc:#002569;--tc2:#002569" data-team="中日" href="https://dragons2027q.kkpwebninja.com/" onclick="if(typeof gtag==='function')gtag('event','xlink_quiz_dragons')"><b>ドラゴンズ</b><span>中日ドラゴンズ</span><em class="cnt"><span class="num" data-slug="dragons">58</span>名</em></a>
+      <a class="tcard" style="--tc:#1A1A1A;--tc2:#DAA520" data-team="ソフトバンク" href="https://hawks2027q.kkpwebninja.com/" onclick="if(typeof gtag==='function')gtag('event','xlink_quiz_hawks')"><b>ホークス</b><span>福岡ソフトバンクホークス</span><em class="cnt"><span class="num" data-slug="hawks">54</span>名</em></a>
+      <a class="tcard" style="--tc:#8B0023;--tc2:#8B0023" data-team="楽天" href="https://eagles2027q.kkpwebninja.com/" onclick="if(typeof gtag==='function')gtag('event','xlink_quiz_eagles')"><b>イーグルス</b><span>東北楽天ゴールデンイーグルス</span><em class="cnt"><span class="num" data-slug="eagles">61</span>名</em></a>
+      <a class="tcard" style="--tc:#002147;--tc2:#002147" data-team="オリックス" href="https://buffaloes2027q.kkpwebninja.com/" onclick="if(typeof gtag==='function')gtag('event','xlink_quiz_buffaloes')"><b>バファローズ</b><span>オリックス・バファローズ</span><em class="cnt"><span class="num" data-slug="buffaloes">52</span>名</em></a>
+      <a class="tcard" style="--tc:#004B98;--tc2:#004B98" data-team="日本ハム" href="https://fighters2027q.kkpwebninja.com/" onclick="if(typeof gtag==='function')gtag('event','xlink_quiz_fighters')"><b>ファイターズ</b><span>北海道日本ハムファイターズ</span><em class="cnt"><span class="num" data-slug="fighters">61</span>名</em></a>
+      <a class="tcard" style="--tc:#002D72;--tc2:#002D72" data-team="西武" href="https://lions2027q.kkpwebninja.com/" onclick="if(typeof gtag==='function')gtag('event','xlink_quiz_lions')"><b>ライオンズ</b><span>埼玉西武ライオンズ</span><em class="cnt"><span class="num" data-slug="lions">60</span>名</em></a>
+      <a class="tcard" style="--tc:#1A1A1A;--tc2:#94A0AC" data-team="ロッテ" href="https://marines2027q.kkpwebninja.com/" onclick="if(typeof gtag==='function')gtag('event','xlink_quiz_marines')"><b>マリーンズ</b><span>千葉ロッテマリーンズ</span><em class="cnt"><span class="num" data-slug="marines">58</span>名</em></a>
+  </div>
+
+  <section class="chg" id="changes">
+    <h2 class="h2">12球団の2027年の背番号の動き（随時更新）</h2>
+    <p>球団公式サイトとNPB公式の発表を確かめて載せています（確認日 球団公式 2026年10月28日・NPB公示 2026年10月29日）。新入団選手と背番号の変更は、全球団とも発表待ちです。</p>
+      <h3 style="--tc:#C8102E;--tc2:#C8102E">広島東洋カープ<small>暫定 56名</small></h3>
+<h4>オフの退団・引退・戦力外（10名）</h4>
+<table><tr><th>背番号</th><th>選手</th><th>発表・出典</th></tr><tr><td class="n">4</td><td>矢野雅哉<br><small>来季の契約を結ばない</small></td><td>10/1 <a href="https://www.carp.co.jp/news/20261001_02" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">5</td><td>小園海斗<br><small>来季の契約を結ばない</small></td><td>10/1 <a href="https://www.carp.co.jp/news/20261001_02" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">93</td><td>前川誠太<br><small>来季の契約を結ばない</small></td><td>10/1 <a href="https://www.carp.co.jp/news/20261001_02" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">60</td><td>田村俊介<br><small>来季の契約を結ばない</small></td><td>10/1 <a href="https://www.carp.co.jp/news/20261001_02" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">29</td><td>ケムナ誠<br><small>来季の契約を結ばない</small></td><td>10/24 <a href="https://www.carp.co.jp/news/20261024_01" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">39</td><td>長谷部銀次<br><small>来季の契約を結ばない</small></td><td>10/24 <a href="https://www.carp.co.jp/news/20261024_01" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">45</td><td>松本竜也<br><small>来季の契約を結ばない</small></td><td>10/24 <a href="https://www.carp.co.jp/news/20261024_01" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">70</td><td>日髙暖己<br><small>来季の契約を結ばない</small></td><td>10/24 <a href="https://www.carp.co.jp/news/20261024_01" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">98</td><td>辻大雅<br><small>来季の契約を結ばない</small></td><td>10/24 <a href="https://www.carp.co.jp/news/20261024_01" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">97</td><td>中村貴浩<br><small>来季の契約を結ばない</small></td><td>10/24 <a href="https://www.carp.co.jp/news/20261024_01" target="_blank" rel="noopener">球団公式</a></td></tr></table>
+      <h3 style="--tc:#F97709;--tc2:#F97709">読売ジャイアンツ<small>暫定 64名</small></h3>
+<h4>オフの退団・引退・戦力外</h4>
+<p class="wait">球団公式の発表を確かめているところです。確かめたら載せます。</p>
+<h4>2026年シーズン途中の退団・移籍（1名）</h4>
+<table><tr><th>背番号</th><th>選手</th><th>発表・出典</th></tr><tr><td class="n">59</td><td>若林楽人<br><small>西武へ移籍（NPB公示）</small></td><td>7/30 <a href="https://npb.jp/announcement/2026/pn_traded.html" target="_blank" rel="noopener">NPB公式</a></td></tr></table>
+      <h3 style="--tc:#1A1A1A;--tc2:#FFD700">阪神タイガース<small>暫定 62名</small></h3>
+<h4>オフの退団・引退・戦力外（5名）</h4>
+<table><tr><th>背番号</th><th>選手</th><th>発表・出典</th></tr><tr><td class="n">16</td><td>西勇輝<br><small>現役引退</small></td><td>9/29 <a href="https://hanshintigers.jp/news/topics/info_11251.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">14</td><td>岩貞祐太<br><small>現役引退</small></td><td>9/30 <a href="https://hanshintigers.jp/news/topics/info_11255.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">53</td><td>島田海吏<br><small>来季の契約を結ばない</small></td><td>10/19 <a href="https://hanshintigers.jp/news/topics/info_11327.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">61</td><td>豊田寛<br><small>来季の契約を結ばない</small></td><td>10/19 <a href="https://hanshintigers.jp/news/topics/info_11327.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">57</td><td>長坂拳弥<br><small>来季の契約を結ばない</small></td><td>10/23 <a href="https://hanshintigers.jp/news/topics/info_11341.html" target="_blank" rel="noopener">球団公式</a></td></tr></table>
+      <h3 style="--tc:#1B2F56;--tc2:#1B2F56">東京ヤクルトスワローズ<small>暫定 50名</small></h3>
+<h4>オフの退団・引退・戦力外（10名）</h4>
+<table><tr><th>背番号</th><th>選手</th><th>発表・出典</th></tr><tr><td class="n">19</td><td>石川雅規<br><small>現役引退</small></td><td>9/2 <a href="https://www.yakult-swallows.co.jp/news/detail/32556" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">71</td><td>沼田翔平<br><small>来季の契約を結ばない</small><br><small>2026年版の出題には入っていない選手</small></td><td>9/29 <a href="https://www.yakult-swallows.co.jp/news/detail/32643" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">34</td><td>田口麗斗<br><small>来季の契約を結ばない</small></td><td>9/29 <a href="https://www.yakult-swallows.co.jp/news/detail/32643" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">99</td><td>青柳晃洋<br><small>来季の契約を結ばない</small></td><td>9/29 <a href="https://www.yakult-swallows.co.jp/news/detail/32643" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">53</td><td>長谷川宙輝<br><small>来季の契約を結ばない</small></td><td>9/29 <a href="https://www.yakult-swallows.co.jp/news/detail/32643" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">37</td><td>山野辺翔<br><small>来季の契約を結ばない</small></td><td>9/29 <a href="https://www.yakult-swallows.co.jp/news/detail/32643" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">45</td><td>小澤怜史<br><small>来季の契約を結ばない</small></td><td>10/26 <a href="https://www.yakult-swallows.co.jp/news/detail/32692" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">8</td><td>茂木栄五郎<br><small>来季の契約を結ばない</small></td><td>10/26 <a href="https://www.yakult-swallows.co.jp/news/detail/32692" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">50</td><td>北村恵吾<br><small>来季の契約を結ばない</small></td><td>10/26 <a href="https://www.yakult-swallows.co.jp/news/detail/32692" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">98</td><td>L.セデーニョ<br><small>自由契約（NPB公示）</small><br><small>2026年版の出題には入っていない選手</small></td><td>10/8 <a href="https://npb.jp/announcement/2026/pn_released.html" target="_blank" rel="noopener">NPB公式</a></td></tr></table>
+      <h3 style="--tc:#00489C;--tc2:#00489C">横浜DeNAベイスターズ<small>暫定 51名</small></h3>
+<h4>オフの退団・引退・戦力外（11名）</h4>
+<table><tr><th>背番号</th><th>選手</th><th>発表・出典</th></tr><tr><td class="n">18</td><td>小園健太<br><small>来季の契約を結ばない</small></td><td>9/29 <a href="https://www.baystars.co.jp/news/2026/09/0929_03.php" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">27</td><td>藤浪晋太郎<br><small>来季の契約を結ばない</small></td><td>9/29 <a href="https://www.baystars.co.jp/news/2026/09/0929_03.php" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">41</td><td>佐々木千隼<br><small>来季の契約を結ばない</small></td><td>9/29 <a href="https://www.baystars.co.jp/news/2026/09/0929_03.php" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">92</td><td>堀岡隼人<br><small>来季の契約を結ばない</small></td><td>9/29 <a href="https://www.baystars.co.jp/news/2026/09/0929_03.php" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">55</td><td>井上絢登<br><small>来季の契約を結ばない</small></td><td>9/29 <a href="https://www.baystars.co.jp/news/2026/09/0929_03.php" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">53</td><td>中川颯<br><small>現役引退</small></td><td>9/30 <a href="https://www.baystars.co.jp/news/2026/09/0930_03.php" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">16</td><td>大貫晋一<br><small>来季の契約を結ばない</small></td><td>9/30 <a href="https://www.baystars.co.jp/news/2026/09/0930_01.php" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">35</td><td>橋本達弥<br><small>来季の契約を結ばない</small></td><td>9/30 <a href="https://www.baystars.co.jp/news/2026/09/0930_01.php" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">32</td><td>益子京右<br><small>来季の契約を結ばない</small></td><td>9/30 <a href="https://www.baystars.co.jp/news/2026/09/0930_01.php" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">57</td><td>東妻純平<br><small>来季の契約を結ばない</small></td><td>9/30 <a href="https://www.baystars.co.jp/news/2026/09/0930_01.php" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">67</td><td>濱将乃介<br><small>来季の契約を結ばない</small></td><td>9/30 <a href="https://www.baystars.co.jp/news/2026/09/0930_01.php" target="_blank" rel="noopener">球団公式</a></td></tr></table>
+<h4>2026年シーズン途中の退団・移籍（4名）</h4>
+<table><tr><th>背番号</th><th>選手</th><th>発表・出典</th></tr><tr><td class="n">0</td><td>デュプランティエ<br><small>自由契約（NPB公示）</small></td><td>7/17 <a href="https://npb.jp/announcement/2026/pn_released.html" target="_blank" rel="noopener">NPB公式</a></td></tr><tr><td class="n">42</td><td>コックス<br><small>自由契約（NPB公示）</small></td><td>6/8 <a href="https://npb.jp/announcement/2026/pn_released.html" target="_blank" rel="noopener">NPB公式</a></td></tr><tr><td class="n">50</td><td>山本祐大<br><small>ソフトバンクへ移籍（NPB公示）</small></td><td>5/13 <a href="https://npb.jp/announcement/2026/pn_traded.html" target="_blank" rel="noopener">NPB公式</a></td></tr><tr><td class="n">66</td><td>ビシエド<br><small>任意引退（NPB公示）</small></td><td>5/25 <a href="https://npb.jp/announcement/2026/pn_retired.html" target="_blank" rel="noopener">NPB公式</a></td></tr></table>
+      <h3 style="--tc:#002569;--tc2:#002569">中日ドラゴンズ<small>暫定 58名</small></h3>
+<h4>オフの退団・引退・戦力外（8名）</h4>
+<table><tr><th>背番号</th><th>選手</th><th>発表・出典</th></tr><tr><td class="n">34</td><td>福敬登<br><small>来季の契約を結ばない</small></td><td>9/29 <a href="https://dragons.jp/news/2026/26092901.php" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">69</td><td>三浦瑞樹<br><small>来季の契約を結ばない</small></td><td>9/29 <a href="https://dragons.jp/news/2026/26092901.php" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">00</td><td>尾田剛樹<br><small>来季の契約を結ばない</small></td><td>9/29 <a href="https://dragons.jp/news/2026/26092901.php" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">0</td><td>辻本倫太郎<br><small>来季の契約を結ばない</small></td><td>9/30 <a href="https://dragons.jp/news/2026/26093001.php" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">42</td><td>ブライト健太<br><small>来季の契約を結ばない</small></td><td>9/30 <a href="https://dragons.jp/news/2026/26093001.php" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">65</td><td>知野直人<br><small>来季の契約を結ばない</small></td><td>10/1 <a href="https://dragons.jp/news/2026/26100101.php" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">39</td><td>宇佐見真吾<br><small>来季の契約を結ばない</small></td><td>10/25 <a href="https://dragons.jp/news/2026/26102501.php" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">44</td><td>川越誠司<br><small>来季の契約を結ばない</small></td><td>10/25 <a href="https://dragons.jp/news/2026/26102501.php" target="_blank" rel="noopener">球団公式</a></td></tr></table>
+      <h3 style="--tc:#1A1A1A;--tc2:#DAA520">福岡ソフトバンクホークス<small>暫定 54名</small></h3>
+<h4>オフの退団・引退・戦力外（7名）</h4>
+<table><tr><th>背番号</th><th>選手</th><th>発表・出典</th></tr><tr><td class="n">29</td><td>大江竜聖<br><small>来季の契約を結ばない</small></td><td>10/6 <a href="https://www.softbankhawks.co.jp/news/detail/202601104937.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">27</td><td>岩井俊介<br><small>来季の契約を結ばない</small></td><td>10/26 <a href="https://www.softbankhawks.co.jp/news/detail/202601115721.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">28</td><td>安德駿<br><small>来季の契約を結ばない</small></td><td>10/26 <a href="https://www.softbankhawks.co.jp/news/detail/202601115721.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">30</td><td>中村稔弥<br><small>来季の契約を結ばない</small></td><td>10/26 <a href="https://www.softbankhawks.co.jp/news/detail/202601115721.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">50</td><td>相良雅斗<br><small>来季の契約を結ばない</small></td><td>10/26 <a href="https://www.softbankhawks.co.jp/news/detail/202601115721.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">58</td><td>木村大成<br><small>来季の契約を結ばない</small></td><td>10/26 <a href="https://www.softbankhawks.co.jp/news/detail/202601115721.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">52</td><td>秋広優人<br><small>来季の契約を結ばない</small></td><td>10/26 <a href="https://www.softbankhawks.co.jp/news/detail/202601115721.html" target="_blank" rel="noopener">球団公式</a></td></tr></table>
+<h4>2026年シーズン途中の退団・移籍（2名）</h4>
+<table><tr><th>背番号</th><th>選手</th><th>発表・出典</th></tr><tr><td class="n">39</td><td>尾形崇斗<br><small>DeNAへ移籍（NPB公示）</small></td><td>5/13 <a href="https://npb.jp/announcement/2026/pn_traded.html" target="_blank" rel="noopener">NPB公式</a></td></tr><tr><td class="n">43</td><td>井上朋也<br><small>DeNAへ移籍（NPB公示）</small></td><td>5/13 <a href="https://npb.jp/announcement/2026/pn_traded.html" target="_blank" rel="noopener">NPB公式</a></td></tr></table>
+      <h3 style="--tc:#8B0023;--tc2:#8B0023">東北楽天ゴールデンイーグルス<small>暫定 61名</small></h3>
+<h4>オフの退団・引退・戦力外（7名）</h4>
+<table><tr><th>背番号</th><th>選手</th><th>発表・出典</th></tr><tr><td class="n">58</td><td>辛島航<br><small>現役引退</small></td><td>9/23 <a href="https://www.rakuteneagles.jp/news/detail/202601195444.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">28</td><td>酒居知史<br><small>来季の契約を結ばない</small></td><td>9/28 <a href="https://www.rakuteneagles.jp/news/detail/202601196664.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">54</td><td>日當直喜<br><small>来季の契約を結ばない</small></td><td>9/28 <a href="https://www.rakuteneagles.jp/news/detail/202601196664.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">64</td><td>林優樹<br><small>来季の契約を結ばない</small></td><td>9/28 <a href="https://www.rakuteneagles.jp/news/detail/202601196664.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">66</td><td>今野龍太<br><small>来季の契約を結ばない</small></td><td>9/28 <a href="https://www.rakuteneagles.jp/news/detail/202601196664.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">25</td><td>田中和基<br><small>現役引退</small></td><td>10/4 <a href="https://www.rakuteneagles.jp/news/detail/202601199593.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">27</td><td>伊藤光<br><small>来季の契約を結ばない</small></td><td>10/20 <a href="https://www.rakuteneagles.jp/news/detail/202601206875.html" target="_blank" rel="noopener">球団公式</a></td></tr></table>
+<h4>2026年シーズン途中の退団・移籍（1名）</h4>
+<table><tr><th>背番号</th><th>選手</th><th>発表・出典</th></tr><tr><td class="n">12</td><td>ゴンザレス<br><small>自由契約（NPB公示）</small></td><td>6/4 <a href="https://npb.jp/announcement/2026/pn_released.html" target="_blank" rel="noopener">NPB公式</a></td></tr></table>
+      <h3 style="--tc:#002147;--tc2:#002147">オリックス・バファローズ<small>暫定 52名</small></h3>
+<h4>オフの退団・引退・戦力外（10名）</h4>
+<table><tr><th>背番号</th><th>選手</th><th>発表・出典</th></tr><tr><td class="n">57</td><td>山田修義<br><small>現役引退</small></td><td>9/24 <a href="https://www.buffaloes.co.jp/news/detail/202600805215.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">5</td><td>西野真弘<br><small>現役引退</small></td><td>9/24 <a href="https://www.buffaloes.co.jp/news/detail/202600805219.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">20</td><td>阿部翔太<br><small>来季の契約を結ばない</small></td><td>10/5 <a href="https://www.buffaloes.co.jp/news/detail/202600808628.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">44</td><td>頓宮裕真<br><small>来季の契約を結ばない</small></td><td>10/5 <a href="https://www.buffaloes.co.jp/news/detail/202600808628.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">59</td><td>ペルドモ<br><small>自由契約（NPB公示）</small></td><td>10/12 <a href="https://npb.jp/announcement/2026/pn_released.html" target="_blank" rel="noopener">NPB公式</a></td></tr><tr><td class="n">12</td><td>東晃平<br><small>来季の契約を結ばない</small></td><td>10/26 <a href="https://www.buffaloes.co.jp/news/detail/202600814160.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">17</td><td>曽谷龍平<br><small>来季の契約を結ばない</small></td><td>10/26 <a href="https://www.buffaloes.co.jp/news/detail/202600814160.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">31</td><td>藤川敦也<br><small>来季の契約を結ばない</small></td><td>10/26 <a href="https://www.buffaloes.co.jp/news/detail/202600814160.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">52</td><td>横山楓<br><small>来季の契約を結ばない</small></td><td>10/26 <a href="https://www.buffaloes.co.jp/news/detail/202600814160.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">94</td><td>川瀬堅斗<br><small>来季の契約を結ばない</small></td><td>10/26 <a href="https://www.buffaloes.co.jp/news/detail/202600814160.html" target="_blank" rel="noopener">球団公式</a></td></tr></table>
+      <h3 style="--tc:#004B98;--tc2:#004B98">北海道日本ハムファイターズ<small>暫定 61名</small></h3>
+<h4>オフの退団・引退・戦力外（7名）</h4>
+<table><tr><th>背番号</th><th>選手</th><th>発表・出典</th></tr><tr><td class="n">9</td><td>中島卓也<br><small>現役引退</small></td><td>9/11 <a href="https://www.fighters.co.jp/news/detail/202600944708.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">93</td><td>松岡洸希<br><small>来季の契約を結ばない</small><br><small>2026年版の出題には入っていない選手</small></td><td>10/19 <a href="https://www.fighters.co.jp/news/detail/202600961159.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">98</td><td>梅林優貴<br><small>来季の契約を結ばない</small></td><td>10/19 <a href="https://www.fighters.co.jp/news/detail/202600961159.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">65</td><td>明瀬諒介<br><small>来季の契約を結ばない</small></td><td>10/19 <a href="https://www.fighters.co.jp/news/detail/202600961159.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">41</td><td>福谷浩司<br><small>退団</small></td><td>10/20 <a href="https://www.fighters.co.jp/news/detail/202600961663.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">94</td><td>清宮虎多朗<br><small>来季の契約を結ばない</small><br><small>2026年版の出題には入っていない選手</small></td><td>10/26 <a href="https://www.fighters.co.jp/news/detail/202600963221.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">44</td><td>阪口樂<br><small>来季の契約を結ばない</small></td><td>10/26 <a href="https://www.fighters.co.jp/news/detail/202600963221.html" target="_blank" rel="noopener">球団公式</a></td></tr></table>
+<h4>2026年シーズン途中の退団・移籍（1名）</h4>
+<table><tr><th>背番号</th><th>選手</th><th>発表・出典</th></tr><tr><td class="n">22</td><td>杉浦稔大<br><small>中日へ移籍（NPB公示）</small></td><td>4/14 <a href="https://npb.jp/announcement/2026/pn_traded.html" target="_blank" rel="noopener">NPB公式</a></td></tr></table>
+      <h3 style="--tc:#002D72;--tc2:#002D72">埼玉西武ライオンズ<small>暫定 60名</small></h3>
+<h4>オフの退団・引退・戦力外（6名）</h4>
+<table><tr><th>背番号</th><th>選手</th><th>発表・出典</th></tr><tr><td class="n">23</td><td>糸川亮太<br><small>来季の契約を結ばない</small></td><td>10/26 <a href="https://www.seibulions.jp/news/detail/202600738925.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">29</td><td>青山美夏人<br><small>来季の契約を結ばない</small></td><td>10/26 <a href="https://www.seibulions.jp/news/detail/202600738925.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">53</td><td>牧野翔矢<br><small>来季の契約を結ばない</small></td><td>10/26 <a href="https://www.seibulions.jp/news/detail/202600738925.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">31</td><td>茶野篤政<br><small>来季の契約を結ばない</small></td><td>10/26 <a href="https://www.seibulions.jp/news/detail/202600738925.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">33</td><td>古川雄大<br><small>来季の契約を結ばない</small></td><td>10/26 <a href="https://www.seibulions.jp/news/detail/202600738925.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">44</td><td>林冠臣<br><small>来季の契約を結ばない</small></td><td>10/26 <a href="https://www.seibulions.jp/news/detail/202600738925.html" target="_blank" rel="noopener">球団公式</a></td></tr></table>
+<h4>2026年シーズン途中の退団・移籍（1名）</h4>
+<table><tr><th>背番号</th><th>選手</th><th>発表・出典</th></tr><tr><td class="n">42</td><td>ボー・タカハシ<br><small>自由契約（NPB公示）</small></td><td>7/17 <a href="https://npb.jp/announcement/2026/pn_released.html" target="_blank" rel="noopener">NPB公式</a></td></tr></table>
+      <h3 style="--tc:#1A1A1A;--tc2:#94A0AC">千葉ロッテマリーンズ<small>暫定 58名</small></h3>
+<h4>オフの退団・引退・戦力外（9名）</h4>
+<table><tr><th>背番号</th><th>選手</th><th>発表・出典</th></tr><tr><td class="n">19</td><td>唐川侑己<br><small>現役引退</small></td><td>9/4 <a href="https://www.marines.co.jp/news/detail/202600921058.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">8</td><td>中村奨吾<br><small>退団</small></td><td>9/30 <a href="https://www.marines.co.jp/news/detail/202600938267.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">41</td><td>一條力真<br><small>現役引退</small></td><td>10/4 <a href="https://www.marines.co.jp/news/detail/202600941132.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">24</td><td>東妻勇輔<br><small>来季の契約を結ばない</small></td><td>10/7 <a href="https://www.marines.co.jp/news/detail/202600942584.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">28</td><td>菊地吏玖<br><small>来季の契約を結ばない</small></td><td>10/7 <a href="https://www.marines.co.jp/news/detail/202600942584.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">43</td><td>石垣勝海<br><small>来季の契約を結ばない</small></td><td>10/7 <a href="https://www.marines.co.jp/news/detail/202600942584.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">92</td><td>森遼大朗<br><small>来季の契約を結ばない</small><br><small>2026年版の出題には入っていない選手</small></td><td>10/24 <a href="https://www.marines.co.jp/news/detail/202600947679.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">59</td><td>早坂響<br><small>来季の契約を結ばない</small></td><td>10/24 <a href="https://www.marines.co.jp/news/detail/202600947679.html" target="_blank" rel="noopener">球団公式</a></td></tr><tr><td class="n">50</td><td>愛斗<br><small>来季の契約を結ばない</small></td><td>10/25 <a href="https://www.marines.co.jp/news/detail/202600947760.html" target="_blank" rel="noopener">球団公式</a></td></tr></table>
+  </section>
+
+    <section class="faq-section">
+      <h2>12球団 背番号クイズ2027のよくある質問</h2>
+      <p class="faq-intro">2027年版について、よく聞かれることをまとめました。</p>
+        <details class="faq-item">
+          <summary>Q. 12球団 背番号クイズ2027はいつ確定版になりますか？</summary>
+          <p>今は準備中で、10月28日時点の暫定名簿（12球団 計687名）で遊べます。新入団選手の背番号や背番号の変更がそろう2027年3月中旬（開幕の前）に確定版にする予定です。</p>
+        </details>
+        <details class="faq-item">
+          <summary>Q. どの球団の背番号クイズがありますか？</summary>
+          <p>セ・リーグ6球団とパ・リーグ6球団の12球団です。このページで球団を選ぶと、その球団の背番号クイズ2027が開きます。</p>
+        </details>
+        <details class="faq-item">
+          <summary>Q. 2026年版とどこが違いますか？</summary>
+          <p>2026年のシーズン途中に退団・移籍した選手と、各球団が2027年に向けて発表した退団・引退・戦力外の選手を、出典を確かめて外しました（12球団で計95名）。新入団・背番号の変更は発表を確かめてから足します。</p>
+        </details>
+        <details class="faq-item">
+          <summary>Q. 全球団をまぜて出題するモードはありますか？</summary>
+          <p>準備中の間はありません。今は球団ごとに遊べます。全球団をまぜた出題は、あとで足す予定です。</p>
+        </details>
+    </section>
+
+  <h2 class="h2">あわせて遊ぶ・調べる</h2>
+  <ul class="links">
+    <li><a href="https://retired.kkpwebninja.com/" onclick="if(typeof gtag==='function')gtag('event','xlink_retired')">プロ野球 永久欠番クイズ</a></li>
+    <li><a href="https://npb-magic.kkpwebninja.com/" onclick="if(typeof gtag==='function')gtag('event','xlink_magic_top')">最新の順位表と優勝マジック</a></li>
+    <li><a href="https://ensei.kkpwebninja.com/" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','xlink_ensei')">遠征費の計算</a></li>
+    <li><a href="https://npb2026q.kkpwebninja.com/">2026年版の12球団 背番号クイズ</a></li>
+  </ul>
+</main>
+
+<!-- WEBNINJA_UNIFIED_FOOTER -->
+<footer style="text-align:center;padding:1.6rem 1rem 2rem;font-size:.875rem;color:#5a6d87;line-height:2;border-top:1px solid #f0e6d2;margin-top:2rem;background:#fffcf7;">
+  <a href="https://kkpwebninja.com/" target="_blank" rel="noopener" style="color:#84663a;text-decoration:none;margin:0 0.5rem;">web忍者の砦</a>·
+    <a href="https://kkpwebninja.com/apps" target="_blank" rel="noopener" style="color:#84663a;text-decoration:none;margin:0 0.5rem;">全アプリ一覧</a>·
+  <a href="https://privacypolicy.kkpwebninja.com/" target="_blank" rel="noopener" style="color:#84663a;text-decoration:none;margin:0 0.5rem;">プライバシーポリシー</a>·
+  <a href="https://kkpwebninja.com/otoiawase" target="_blank" rel="noopener" style="color:#84663a;text-decoration:none;margin:0 0.5rem;">お問い合わせ</a>
+</footer>
+<script>
+// 推し球団（npb-magic と同じ 'npb-fav-team'）のカードを先頭に。カードはHTMLに静的に置いてある
+(function(){
+  let fav = null; try { fav = localStorage.getItem('npb-fav-team'); } catch(e){}
+  if (!fav) return;
+  const box = document.getElementById('cards'), hit = box && box.querySelector('[data-team="' + fav + '"]');
+  if (hit && hit !== box.firstElementChild) box.insertBefore(hit, box.firstElementChild);
+})();
+</script>
+</body>
+</html>
