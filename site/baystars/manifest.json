@@ -1,0 +1,30 @@
+{
+  "name": "ベイスターズ背番号クイズ2027",
+  "short_name": "ベイスターズ背番号2027",
+  "description": "横浜DeNAベイスターズの背番号クイズ2027年版（準備中）。10月28日時点の暫定名簿51名で、選手から背番号・背番号から選手を当てる4択クイズ。退団・引退の動きと新入団の背番号は、発表を確かめて更新します。",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fffdf8",
+  "theme_color": "#ff8a3d",
+  "icons": [
+    {
+      "src": "/favicon-192.png?v=2",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-512.png?v=2",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png?v=2",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

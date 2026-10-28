@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://giants2027q.kkpwebninja.com/sitemap.xml

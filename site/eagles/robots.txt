@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eagles2027q.kkpwebninja.com/sitemap.xml

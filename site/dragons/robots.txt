@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dragons2027q.kkpwebninja.com/sitemap.xml

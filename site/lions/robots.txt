@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lions2027q.kkpwebninja.com/sitemap.xml
