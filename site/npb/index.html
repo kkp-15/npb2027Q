@@ -22,12 +22,17 @@
 
 <title>プロ野球12球団 背番号クイズ2027｜2027年版（準備中）・選手と背番号を当てる｜無料</title>
 <!-- Google Analytics GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2LM85GJN0L"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-2LM85GJN0L');
+// 本番ドメインだけで計測する（*.pages.dev に来るボットの0秒訪問で数字が崩れていたため）
+if (/(^|\.)kkpwebninja\.com$/.test(location.hostname)) {
+  var gs = document.createElement('script'); gs.async = true;
+  gs.src = 'https://www.googletagmanager.com/gtag/js?id=G-2LM85GJN0L';
+  document.head.appendChild(gs);
+  gtag('js', new Date());
+  gtag('config', 'G-2LM85GJN0L');
+}
 </script>
 <!-- 12球団 背番号クイズ 2027年版（準備中）の入口。~/test/_quiz2027_src の template/hub.html から build.py で書き出したもの。直接直さない。
      準備中の間は広告（AdSense）を入れない。球団ロゴ・ユニフォーム柄・選手写真は使わない（球団色だけ）。 -->
