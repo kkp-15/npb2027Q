@@ -40,6 +40,41 @@ if (/(^|\.)kkpwebninja\.com$/.test(location.hostname)) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+<style id="k-aff">
+/* 商品カード .k-aff（kkp-kit 0da92e0 の kit.css の写し。このテンプレは kit を読まないため・2026-11-26） */
+.k-aff{border:1px solid #d9cbb5;border-radius:6px;padding:8px 10px 10px;margin:14px 0 18px;background:#fffdf8;color:#3d3427;text-align:left}
+.k-aff-h{display:flex;align-items:center;gap:6px;margin:0 0 4px;font-size:14px;font-weight:700;line-height:1.5;color:#4a3f37}
+.k-aff-pr{flex:none;font-size:12px;border:1px solid #8a7d6b;color:#5b5047;padding:0 4px;border-radius:3px;line-height:1.5;font-weight:400;letter-spacing:0}
+.k-aff-lead{margin:0 0 6px;font-size:14px;line-height:1.6;color:#3d3427}
+.k-aff-item{display:flex;gap:10px;align-items:center;padding:8px 0;border-top:1px dashed #e4d8c4}
+.k-aff-h+.k-aff-item,.k-aff>.k-aff-item:first-child{border-top:0}
+.k-aff-img{flex:none;display:block;width:88px;height:88px;border-radius:4px;background:#fff;overflow:hidden;line-height:0}
+.k-aff-img img{width:100%;height:100%;object-fit:contain;display:block;margin:0;border:0}
+.k-aff-txt{flex:1;min-width:0;font-size:14px;line-height:1.5;color:#3d3427}
+.k-aff-txt b{display:block;font-size:15px;line-height:1.4;color:#2b231d}
+.k-aff-desc{display:block;font-size:14px;line-height:1.5;color:#5b5047}
+.k-aff-btns{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.k-aff .k-aff-btns>a[href]{flex:1 1 96px;min-width:fit-content;font-family:var(--k-head);min-height:44px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;padding:0 6px;font-size:14px;font-weight:700;line-height:1.2;border:1.5px solid #3d3427;border-radius:6px;color:#3d3427!important;background:#fff!important;text-decoration:none!important;text-decoration-line:none!important;white-space:nowrap;box-shadow:none;text-shadow:none;letter-spacing:0}
+.k-aff .k-aff-btns>a.k-aff-rakuten[href]{background:#bf0000!important;border-color:#bf0000;color:#fff!important}
+.k-aff .k-aff-btns>a[href]::after,.k-aff .k-aff-btns>a[href]::before{content:none}
+.k-aff a.k-aff-img[href]{text-decoration:none!important;border:0}
+.k-aff-note{margin:6px 0 0;font-size:14px;line-height:1.5;color:#5b5047}
+.k-aff-solo{margin:8px 0 0;padding:4px 10px}
+.k-aff-solo .k-aff-item{border-top:0;padding:6px 0}
+.k-aff-txt b .k-aff-pr{display:inline-block;margin-right:6px;vertical-align:2px;font-size:12px}
+.k-aff-desc a{color:#7a4a12;text-decoration:underline}
+.k-aff-scroll{display:flex;gap:8px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;padding:2px 2px 8px;margin:4px 0 0;-webkit-overflow-scrolling:touch}
+.k-aff-scroll .k-aff-item{flex:0 0 136px;flex-direction:column;align-items:stretch;gap:6px;padding:8px;border:1px solid #e4d8c4;border-radius:6px;background:#fff;scroll-snap-align:start}
+.k-aff-scroll .k-aff-img{width:100%;height:100px}
+.k-aff-scroll .k-aff-txt b{font-size:14px}
+.k-aff-scroll .k-aff-desc{font-size:14px;line-height:1.4}
+.k-aff-scroll .k-aff-btns{flex-direction:column}
+.k-aff .k-aff-scroll .k-aff-btns>a[href]{flex:none;min-width:0}
+.k-aff-hint{margin:0;font-size:14px;color:#5b5047}
+@media (max-width:360px){.k-aff-img{width:72px;height:72px}}
+@media print{.k-aff{display:none}}
+.k-aff .k-aff-btns>a[href]{font-family:inherit}
+</style>
 <style>
 :root{
   /* 球団ごとに差し替える色（data/teams.json）。--team-on は地の上の字。--team-accent は黒が地の3球団の差し色（ほかは --team と同じ） */
@@ -595,6 +630,15 @@ footer{margin-top:28px!important}
         <button type="button" data-v="0" aria-pressed="false">なし</button></div></td></tr>
     </table>
     <p class="hint" id="playNote">ひとりで挑戦します。</p>
+    <!-- 2026-11-26 設定の下に1つだけ（12球団で同じ本。球団名は入れない） -->
+    <aside class="k-aff" data-zone="affiliate_quiz2027_top">
+      <p class="k-aff-h"><span class="k-aff-pr">PR</span>背番号を覚えたら読みたい1冊</p>
+      <div class="k-aff-item">
+        <a class="k-aff-img" href="https://hb.afl.rakuten.co.jp/hgc/11008fdf.72a391c0.11008fe0.307a7b09/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F17171711%2F&amp;m=https%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F17171711%2F" target="_blank" rel="nofollow sponsored noopener" data-store="rakuten" data-item="sebango_zukan"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/7151/9784583627151_1_2.jpg?_ex=200x200" width="88" height="88" loading="lazy" alt="本「日本プロ野球背番号大図鑑」の表紙"></a>
+        <div class="k-aff-txt"><b>日本プロ野球背番号大図鑑（B.B.MOOK）</b><span class="k-aff-desc">ベースボール・マガジン社の背番号の図鑑（ムック）。</span>
+          <div class="k-aff-btns"><a class="k-aff-rakuten" href="https://hb.afl.rakuten.co.jp/hgc/11008fdf.72a391c0.11008fe0.307a7b09/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F17171711%2F&amp;m=https%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F17171711%2F" target="_blank" rel="nofollow sponsored noopener" data-store="rakuten" data-item="sebango_zukan">楽天で見る</a><a class="k-aff-amazon" href="https://www.amazon.co.jp/s?k=%E6%97%A5%E6%9C%AC%E3%83%97%E3%83%AD%E9%87%8E%E7%90%83%E8%83%8C%E7%95%AA%E5%8F%B7%E5%A4%A7%E5%9B%B3%E9%91%91&amp;tag=kkp15-22" target="_blank" rel="nofollow sponsored noopener" data-store="amazon" data-item="sebango_zukan">Amazonで探す</a></div></div>
+      </div>
+    </aside>
 
   </section>
 
@@ -682,6 +726,15 @@ footer{margin-top:28px!important}
       <p class="pick-note">楽天のリンクはアフィリエイト（広告）です。公式の商品は公式ショップでどうぞ。</p>
     </div>
 
+    <!-- 2026-11-26 結果の下に1つ（名鑑。準備中の間は AdSense なしのまま） -->
+    <aside class="k-aff" data-zone="affiliate_quiz2027_result">
+      <p class="k-aff-h"><span class="k-aff-pr">PR</span>顔と背番号をいっしょに覚えるなら</p>
+      <div class="k-aff-item">
+        <a class="k-aff-img" href="https://hb.afl.rakuten.co.jp/hgc/11008fdf.72a391c0.11008fe0.307a7b09/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F18530156%2F&amp;m=https%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F18530156%2F" target="_blank" rel="nofollow sponsored noopener" data-store="rakuten" data-item="color_meikan_2026"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8714/9784583628714_1_3.jpg?_ex=200x200" width="88" height="88" loading="lazy" alt="本「プロ野球カラー名鑑 2026」の表紙"></a>
+        <div class="k-aff-txt"><b>プロ野球カラー名鑑 2026（B.B.MOOK）</b><span class="k-aff-desc">ベースボール・マガジン社。12球団の選手を写真つきでまとめた名鑑（2026年版）。</span>
+          <div class="k-aff-btns"><a class="k-aff-rakuten" href="https://hb.afl.rakuten.co.jp/hgc/11008fdf.72a391c0.11008fe0.307a7b09/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F18530156%2F&amp;m=https%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F18530156%2F" target="_blank" rel="nofollow sponsored noopener" data-store="rakuten" data-item="color_meikan_2026">楽天で見る</a><a class="k-aff-amazon" href="https://www.amazon.co.jp/s?k=%E3%83%97%E3%83%AD%E9%87%8E%E7%90%83%E3%82%AB%E3%83%A9%E3%83%BC%E5%90%8D%E9%91%91+2026&amp;tag=kkp15-22" target="_blank" rel="nofollow sponsored noopener" data-store="amazon" data-item="color_meikan_2026">Amazonで探す</a></div></div>
+      </div>
+    </aside>
     <h2 class="h2">1問ずつの答え</h2>
     <table class="rv"><thead><tr><th>背番号</th><th>選手</th><th></th></tr></thead><tbody id="rvBody"></tbody></table>
 
@@ -860,6 +913,7 @@ footer{margin-top:28px!important}
     </section>
   </div>
 </main>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.k-aff a[href]');if(!a)return;var x=a.closest('.k-aff');try{if(window.gtag)gtag('event','toride_click',{link_class:x.getAttribute('data-zone'),link_url:a.href,store:a.getAttribute('data-store')||'',item:a.getAttribute('data-item')||''});}catch(err){}},true);</script>
 
 <!-- WEBNINJA_UNIFIED_FOOTER -->
 <footer style="text-align:center;padding:1.6rem 1rem 2rem;font-size:.875rem;color:#5a6d87;line-height:2;border-top:1px solid #f0e6d2;margin-top:2rem;background:#fffcf7;">
